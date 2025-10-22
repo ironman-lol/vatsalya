@@ -9,26 +9,28 @@ export default {
     extend: {
       colors: {
         brand: {
-          yellow: '#FFC720',
-          black: '#000000',
-          white: '#FFFFFF',
-          gray: {
-            50: '#F9FAFB',
-            100: '#F3F4F6',
-            200: '#E5E7EB',
-            300: '#D1D5DB',
-            400: '#9CA3AF',
-            500: '#6B7280',
-            600: '#4B5563',
-            700: '#374151',
-            800: '#1F2937',
-            900: '#111827',
+          primary: '#9A8A78', // Sophisticated gold
+          secondary: '#2C3338', // Rich charcoal
+          accent: '#D4B595', // Warm metallic
+          cream: '#F5F1E8',
+          stone: {
+            50: '#FAF9F7',
+            100: '#F5F1E8',
+            200: '#E8E1D4',
+            300: '#D4C5B1',
+            400: '#B5A18C',
+            500: '#9A8A78',
+            600: '#7D6F5D',
+            700: '#625748',
+            800: '#484237',
+            900: '#2C2821',
           }
         }
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ['Cormorant Garamond', 'serif'],
+        body: ['Montserrat', 'sans-serif'],
+        display: ['Cormorant Garamond', 'serif'],
       },
       container: {
         center: true,

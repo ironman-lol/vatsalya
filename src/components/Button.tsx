@@ -9,18 +9,18 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const baseStyles = 'font-medium rounded-lg transition-colors duration-200';
+  const baseStyles = 'font-body tracking-wider uppercase transition-all duration-300';
   
   const variants = {
-    primary: 'bg-brand-yellow text-black hover:bg-brand-yellow/90',
-    secondary: 'bg-gray-800 text-white hover:bg-gray-700',
-    outline: 'border-2 border-brand-yellow text-brand-yellow hover:bg-brand-yellow/10'
+    primary: 'bg-brand-secondary text-white hover:bg-brand-primary',
+    secondary: 'bg-transparent text-brand-secondary border border-brand-secondary hover:bg-brand-secondary hover:text-white',
+    outline: 'bg-transparent text-brand-primary border border-brand-primary hover:bg-brand-primary hover:text-white'
   };
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2',
-    lg: 'px-6 py-3 text-lg'
+    sm: 'px-6 py-2 text-xs',
+    md: 'px-8 py-3 text-sm',
+    lg: 'px-12 py-4 text-sm'
   };
 
   return (

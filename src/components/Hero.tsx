@@ -1,106 +1,137 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { usePrefersReducedMotion } from '../hooks';
-import { fadeIn, staggerContainer } from '../lib/animations';
-import Button from './Button';
-import MosaicLogo from './MosaicLogo';
+import { fadeUp, heroMask } from '../lib/animations';
 
-export default function Hero() {
+interface HeroProps {
+  title: string;
+  subtitle?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
+  children?: React.ReactNode;
+  className?: string;
+  imagePosition?: 'left' | 'right';
+}
+
+export default function Hero({
+  title,
+  subtitle,
+  image,
+  children,
+  className = '',
+  imagePosition = 'right',
+}: HeroProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
-
-  const y = useTransform(scrollY, [0, 500], [0, 200]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const y = useTransform(scrollY, [0, 300], [0, 150]);
 
   return (
     <div
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-brand-white to-brand-yellow/10"
+      className="relative min-h-screen overflow-hidden bg-brand-stone-50"
     >
-      {/* Background Pattern */}
+      {/* Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.15]" data-parallax>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,#FFC720,transparent)]" />
-          <div className="h-full bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-100px,#9A8A78,transparent)]" />
+          <div className="h-full bg-[linear-gradient(to_right,#2C3338_1px,transparent_1px),linear-gradient(to_bottom,#2C3338_1px,transparent_1px)] bg-[size:8rem_8rem]" />
         </div>
       </div>
 
       <motion.div
         style={{ opacity }}
-        className="relative container pt-32 pb-20 md:min-h-screen md:flex md:items-center"
+        className={`relative container pt-40 pb-20 ${className}`}
       >
-        <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
-          {/* Text Content */}
+        <div className="grid items-center grid-cols-1 gap-16 lg:gap-24 md:grid-cols-2">
           <motion.div
-            variants={staggerContainer}
-            initial="hidden"
+            className={`${imagePosition === 'right' ? 'md:order-1' : 'md:order-2'} relative z-10`}
+            variants={fadeUp}
+            initial={prefersReducedMotion ? "visible" : "hidden"}
             animate="visible"
-            className="space-y-8"
           >
-            <motion.h1
-              variants={fadeIn}
-              className="text-4xl font-bold leading-tight md:text-6xl font-heading"
+            <motion.span 
+              className="block font-body text-sm tracking-[0.2em] text-brand-primary mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
             >
-              Transform Your Space with Innovative Design
-            </motion.h1>
-            <motion.p
-              variants={fadeIn}
-              className="text-lg text-brand-black/80 md:text-xl"
-            >
-              Creating timeless interiors that inspire and elevate your everyday
-              living experience.
-            </motion.p>
-            <motion.div variants={fadeIn} className="flex gap-4">
-              <Button size="lg">Get Started</Button>
-              <Button variant="secondary" size="lg">
-                View Portfolio
-              </Button>
-            </motion.div>
+              LUXURY INTERIOR DESIGN
+            </motion.span>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-light leading-[1.2] mb-8">
+              {title}
+            </h1>
+            {subtitle && (
+              <p className="text-lg md:text-xl text-brand-stone-600 font-light max-w-xl">
+                {subtitle}
+              </p>
+            )}
+            {children && (
+              <motion.div variants={fadeUp} className="mt-12">
+                {children}
+              </motion.div>
+            )}
           </motion.div>
 
-          {/* Mosaic Logo */}
-          <motion.div
-            style={{ y: prefersReducedMotion ? 0 : y }}
-            className="relative flex items-center justify-center"
-          >
-            <div className="relative w-full max-w-lg aspect-square">
-              <div className="absolute inset-0 transition-transform group">
-                <MosaicLogo
-                  size={500}
-                  className="w-full h-full transform -rotate-12 scale-90"
-                />
+          {image && (
+            <motion.div
+              className={`relative ${
+                imagePosition === 'right' ? 'md:order-2' : 'md:order-1'
+              }`}
+              variants={heroMask}
+              initial={prefersReducedMotion ? "visible" : "hidden"}
+              animate="visible"
+            >
+              <div className="relative">
+                {/* Decorative frame */}
+                <div className="absolute -inset-4 border border-brand-primary/20 z-0" />
+                <div className="relative z-10">
+                  <picture>
+                    <source
+                      srcSet={`${image.src}?format=webp`}
+                      type="image/webp"
+                    />
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full aspect-[3/4] object-cover"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-32 h-32 bg-brand-yellow/20 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-brand-yellow/20 rounded-full blur-3xl" />
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
         </div>
       </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
       >
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm text-brand-black/60">Scroll to explore</span>
+        <div className="flex flex-col items-center space-y-3">
+          <span className="font-body text-xs tracking-[0.2em] text-brand-stone-500">
+            SCROLL TO EXPLORE
+          </span>
           <motion.div
             animate={{
-              y: [0, 8, 0],
+              y: [0, 12, 0],
             }}
             transition={{
-              duration: 1.5,
+              duration: 2,
               repeat: Infinity,
               repeatType: 'loop',
+              ease: 'easeInOut',
             }}
-            className="w-6 h-10 border-2 border-brand-black/20 rounded-full p-1"
-          >
-            <div className="w-full h-2 bg-brand-yellow rounded-full" />
-          </motion.div>
+            className="w-[1px] h-16 bg-gradient-to-b from-brand-primary/50 to-transparent"
+          />
         </div>
       </motion.div>
     </div>

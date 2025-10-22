@@ -1,6 +1,6 @@
 import type { Variants } from 'framer-motion';
 
-export const fadeIn: Variants = {
+export const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -10,35 +10,48 @@ export const fadeIn: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: [0.215, 0.61, 0.355, 1], // Custom easing
     },
   },
 };
 
-export const staggerContainer: Variants = {
-  hidden: {},
+export const stagger: Variants = {
+  hidden: { opacity: 0 },
   visible: {
+    opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
 
-export const mosaicVariants = {
+export const heroMask: Variants = {
   hidden: {
-    opacity: 0,
-    scale: 0,
+    clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)',
   },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
+  visible: {
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
     transition: {
-      delay: i * 0.05,
-      duration: 0.5,
-      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.2,
+      ease: [0.645, 0.045, 0.355, 1], // Custom cubic bezier for dramatic reveal
     },
-  }),
+  },
+};
+
+export const timelineNode: Variants = {
+  hidden: {
+    pathLength: 0,
+    opacity: 0,
+  },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    transition: {
+      pathLength: { duration: 0.8, ease: 'easeInOut' },
+      opacity: { duration: 0.2 },
+    },
+  },
 };
 
 export const navVariants: Variants = {
