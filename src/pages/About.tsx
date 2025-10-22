@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, timelineNode } from '../lib/animations';
+import LazyImage from '../components/LazyImage';
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 import SEO from '../components/SEO';
@@ -203,19 +204,12 @@ export default function About() {
                   whileHover={{ y: -5 }}
                 >
                   <div className="relative aspect-[3/4] mb-4 overflow-hidden">
-                    <picture>
-                      <source
-                        srcSet={`${member.image}?format=webp`}
-                        type="image/webp"
-                      />
-                      <img
-                        src={member.image}
-                        alt={`Portrait of ${member.name}`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <LazyImage
+                      src={`${member.image}?format=webp`}
+                      alt={`Portrait of ${member.name}`}
+                      className="w-full h-full"
+                      aspectRatio="aspect-[3/4]"
+                    />
 
                     {/* Social links overlay */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
@@ -330,12 +324,11 @@ export default function About() {
                   variants={fadeUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <img
+                  <LazyImage
                     src={accolade.logo}
                     alt={accolade.name}
-                    className="w-full h-auto"
-                    loading="lazy"
-                    decoding="async"
+                    className="w-full"
+                    aspectRatio="aspect-[3/2]"
                   />
                 </motion.a>
               ))}

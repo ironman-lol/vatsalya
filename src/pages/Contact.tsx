@@ -119,8 +119,8 @@ export default function Contact() {
               <h2 className="text-xl font-bold mb-4">Visit Us</h2>
               <address className="not-italic text-gray-600">
                 123 Design Street<br />
-                New York, NY 10001<br />
-                United States
+                Bengaluru, KA 560001<br />
+                India
               </address>
             </div>
 

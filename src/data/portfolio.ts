@@ -30,23 +30,23 @@ export const projects: Project[] = [
     description: 'A luxurious penthouse merging contemporary design with traditional Indian elements. Floor-to-ceiling windows frame panoramic city views while custom brass details accent rich wooden surfaces.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c',
+        url: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221',
         alt: 'Living room with panoramic city views',
         aspectRatio: 16/9
       },
       {
-        url: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115',
+        url: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3',
         alt: 'Custom brass-detailed kitchen',
         aspectRatio: 4/3
       },
       {
-        url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb3',
+        url: 'https://images.unsplash.com/photo-1632829882891-5047ccc421bc',
         alt: 'Master bedroom with wooden accents',
         aspectRatio: 3/2
       }
     ],
     hero: {
-      url: 'https://images.unsplash.com/photo-1600607687644-c7171b42498e',
+      url: 'https://images.unsplash.com/photo-1600210491369-e753d80a41f3',
       alt: 'Skyline Penthouse main living area',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },
@@ -62,23 +62,23 @@ export const projects: Project[] = [
     description: 'A dynamic co-working environment designed for creativity and collaboration. Industrial elements meet biophilic design with an emphasis on natural light and flexible workspaces.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1497366216548-37526070297c',
+        url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2',
         alt: 'Open plan co-working area',
         aspectRatio: 16/9
       },
       {
-        url: 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76',
+        url: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2',
         alt: 'Meeting pods with living walls',
         aspectRatio: 1/1
       },
       {
-        url: 'https://images.unsplash.com/photo-1519974719765-e6559eac2575',
+        url: 'https://images.unsplash.com/photo-1577412647305-991150c7d163',
         alt: 'Cafe and breakout space',
         aspectRatio: 3/2
       }
     ],
     hero: {
-      url: 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76',
+      url: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2',
       alt: 'Urban Workspace central atrium',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },
@@ -93,23 +93,23 @@ export const projects: Project[] = [
     description: 'Careful restoration of a 19th-century Portuguese villa, preserving original features while integrating modern amenities. Traditional materials and techniques were used alongside contemporary interventions.',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9',
+        url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
         alt: 'Restored facade with traditional features',
         aspectRatio: 16/9
       },
       {
-        url: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1',
+        url: 'https://images.unsplash.com/photo-1501183638710-841dd1904471',
         alt: 'Modern kitchen in historical setting',
         aspectRatio: 4/3
       },
       {
-        url: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea',
+        url: 'https://images.unsplash.com/photo-1582037928769-181f2644ecb7',
         alt: 'Courtyard with preserved tiles',
         aspectRatio: 1/1
       }
     ],
     hero: {
-      url: 'https://images.unsplash.com/photo-1600566752229-250ed26470e2',
+      url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92',
       alt: 'Heritage Villa exterior view',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },
@@ -124,23 +124,23 @@ export const projects: Project[] = [
     description: 'A minimalist urban retreat emphasizing calm and functionality. Clean lines and natural materials create a sense of peace within the bustling city.',
     images: [
       {
-        url: '/assets/portfolio/zen-apartment/01.jpg',
+        url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c',
         alt: 'Minimalist living space',
         aspectRatio: 16/9
       },
       {
-        url: '/assets/portfolio/zen-apartment/02.jpg',
+        url: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0',
         alt: 'Japanese-inspired bedroom',
         aspectRatio: 4/3
       },
       {
-        url: '/assets/portfolio/zen-apartment/03.jpg',
+        url: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf',
         alt: 'Tea room with custom woodwork',
         aspectRatio: 3/2
       }
     ],
     hero: {
-      url: '/assets/portfolio/zen-apartment/hero.jpg',
+      url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c',
       alt: 'Zen Apartment main space',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },
@@ -155,23 +155,23 @@ export const projects: Project[] = [
     description: 'A flagship retail space that redefines luxury shopping through immersive design. Dynamic lighting and modular displays create ever-changing experiences.',
     images: [
       {
-        url: '/assets/portfolio/retail-concept/01.jpg',
+        url: 'https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db',
         alt: 'Store entrance with dramatic lighting',
         aspectRatio: 16/9
       },
       {
-        url: '/assets/portfolio/retail-concept/02.jpg',
+        url: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5',
         alt: 'Custom display systems',
         aspectRatio: 1/1
       },
       {
-        url: '/assets/portfolio/retail-concept/03.jpg',
+        url: 'https://images.unsplash.com/photo-1519420573924-65fcd45245f8',
         alt: 'VIP shopping lounge',
         aspectRatio: 3/2
       }
     ],
     hero: {
-      url: '/assets/portfolio/retail-concept/hero.jpg',
+      url: 'https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db',
       alt: 'Retail Concept main hall',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },
@@ -186,23 +186,23 @@ export const projects: Project[] = [
     description: 'A sustainable family home that dissolves the boundaries between inside and outside. Extensive glazing and green roofs create a seamless connection with the surrounding garden.',
     images: [
       {
-        url: '/assets/portfolio/garden-house/01.jpg',
+        url: 'https://images.unsplash.com/photo-1613977257363-707ba9348227',
         alt: 'House exterior with green roof',
         aspectRatio: 16/9
       },
       {
-        url: '/assets/portfolio/garden-house/02.jpg',
+        url: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154',
         alt: 'Indoor-outdoor living space',
         aspectRatio: 4/3
       },
       {
-        url: '/assets/portfolio/garden-house/03.jpg',
+        url: 'https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4',
         alt: 'Native garden design',
         aspectRatio: 3/2
       }
     ],
     hero: {
-      url: '/assets/portfolio/garden-house/hero.jpg',
+      url: 'https://images.unsplash.com/photo-1613977257363-707ba9348227',
       alt: 'Garden House exterior view',
       blurDataUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRg...' // TODO: Generate LQIP
     },

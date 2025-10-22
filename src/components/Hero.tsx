@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { usePrefersReducedMotion } from '../hooks';
 import { fadeUp, heroMask } from '../lib/animations';
+import LazyImage from './LazyImage';
 
 interface HeroProps {
   title: string;
@@ -27,7 +28,6 @@ export default function Hero({
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const y = useTransform(scrollY, [0, 300], [0, 150]);
 
   return (
     <div
@@ -89,19 +89,12 @@ export default function Hero({
                 {/* Decorative frame */}
                 <div className="absolute -inset-4 border border-brand-primary/20 z-0" />
                 <div className="relative z-10">
-                  <picture>
-                    <source
-                      srcSet={`${image.src}?format=webp`}
-                      type="image/webp"
-                    />
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full aspect-[3/4] object-cover"
-                      loading="eager"
-                      decoding="async"
-                    />
-                  </picture>
+                  <LazyImage
+                    src={`${image.src}?format=webp`}
+                    alt={image.alt}
+                    className="w-full"
+                    aspectRatio="aspect-[3/4]"
+                  />
                 </div>
               </div>
             </motion.div>
