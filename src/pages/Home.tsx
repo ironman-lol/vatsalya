@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import LazyImage from '../components/LazyImage';
 import SEO from '../components/SEO';
-import { fadeIn, fadeUp } from '../lib/animations';
+import { fadeUp } from '../lib/animations';
 
 export default function Home() {
   return (

@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   const filteredProjects = selectedCategory === 'all'
     ? projects
@@ -95,8 +94,7 @@ export default function Portfolio() {
                 <motion.div
                   key={project.slug}
                   variants={fadeUp}
-                  className="group cursor-pointer"
-                  onClick={() => setSelectedProject(project)}
+                  className="group"
                 >
                   <div className="relative mb-6 overflow-hidden rounded-lg">
                     <LazyImage
