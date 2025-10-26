@@ -96,17 +96,17 @@ export default function Home() {
                 {
                   title: 'Bespoke Design',
                   description: 'Every project is unique, tailored to reflect your individual style and needs. Our design process begins with understanding your vision and lifestyle.',
-                  image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221'
+                  image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea'
                 },
                 {
                   title: 'Artisan Craftsmanship',
                   description: 'We partner with master artisans and craftspeople who bring decades of expertise to create bespoke furnishings and details.',
-                  image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace'
+                  image: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe'
                 },
                 {
                   title: 'Sustainable Luxury',
                   description: 'Our designs embrace sustainable practices and materials without compromising on luxury and elegance. We integrate eco-friendly solutions with timeless sophistication.',
-                  image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d'
+                  image: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c'
                 }
               ].map((item, index) => (
                 <motion.div
@@ -189,8 +189,8 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute -inset-4 border border-brand-primary/20" />
                   <LazyImage
-                    src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3"
-                    alt="Azure Penthouse interior"
+                    src="https://images.unsplash.com/photo-1737233433647-b53b339306f4"
+                    alt="Luxury wardrobe interior"
                     className="w-full"
                     aspectRatio="aspect-[4/3]"
                   />
@@ -200,71 +200,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Design Approach */}
-        <section className="py-32 bg-brand-stone-50">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="text-center mb-16"
-            >
-              <span className="font-body text-sm tracking-[0.2em] text-brand-primary">OUR PROCESS</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-light mt-6">The Art of Creation</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {[
-                {
-                  step: '01',
-                  title: 'Discovery',
-                  description: 'We begin with understanding your vision, lifestyle, and aspirations through in-depth consultations.',
-                  details: ['Personal Style Analysis', 'Space Assessment', 'Functional Requirements']
-                },
-                {
-                  step: '02',
-                  title: 'Concept',
-                  description: 'Our team develops unique design concepts that align with your vision while pushing creative boundaries.',
-                  details: ['Mood Boards', 'Material Selection', 'Color Palettes']
-                },
-                {
-                  step: '03',
-                  title: 'Development',
-                  description: 'We refine every detail of the design through an iterative process of feedback and improvement.',
-                  details: ['3D Visualization', 'Material Sampling', 'Detail Drawings']
-                },
-                {
-                  step: '04',
-                  title: 'Realization',
-                  description: 'Expert craftsmen and trusted partners bring the design to life with meticulous attention to detail.',
-                  details: ['Quality Control', 'Installation', 'Final Styling']
-                }
-              ].map((phase, index) => (
-                <motion.div
-                  key={phase.step}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                  className="relative"
-                >
-                  <div className="text-6xl font-light text-brand-primary/10 mb-4">{phase.step}</div>
-                  <h3 className="text-xl font-heading mb-4">{phase.title}</h3>
-                  <p className="text-brand-stone-600 mb-6">{phase.description}</p>
-                  <ul className="space-y-2">
-                    {phase.details.map((detail, i) => (
-                      <li key={i} className="text-sm text-brand-stone-500 flex items-center">
-                        <span className="w-1.5 h-1.5 bg-brand-primary/60 rounded-full mr-2"></span>
-                        {detail}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Services Grid */}
         <section className="py-32">
@@ -391,8 +326,8 @@ export default function Home() {
         <section className="relative py-32">
           <div className="absolute inset-0">
             <LazyImage
-              src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3"
-              alt="Luxury interior"
+              src="https://images.unsplash.com/photo-1616048056617-93b94a339009"
+              alt="Luxury furniture showcase"
               className="w-full h-full object-cover"
               aspectRatio="aspect-[21/9]"
             />
