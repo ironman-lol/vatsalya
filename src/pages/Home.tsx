@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import LazyImage from '../components/LazyImage';
 import SEO from '../components/SEO';
 import { fadeUp } from '../lib/animations';
+import DesignSteps from '../components/DesignSteps';
 
 export default function Home() {
   return (
@@ -131,6 +132,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Design Steps */}
+        <DesignSteps />
 
         {/* Featured Project */}
         <section className="py-32 bg-brand-stone-50">

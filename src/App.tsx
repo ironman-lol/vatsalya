@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import WhatsAppButton from './components/WhatsAppButton';
 
 // Lazy load other pages
 const Portfolio = lazy(() => import('./pages/Portfolio'));
@@ -55,6 +56,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <WhatsAppButton phoneNumber="911234567890" />
       </Router>
     </HelmetProvider>
   );
