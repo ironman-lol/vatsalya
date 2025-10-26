@@ -57,21 +57,21 @@ const steps = [
 
 const DesignSteps: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={stagger}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.h2 
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
             }}
-            className="text-4xl md:text-5xl font-heading font-light mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-heading font-light mb-4 md:mb-6"
           >
             Your Dream Home Journey
           </motion.h2>
@@ -80,7 +80,7 @@ const DesignSteps: React.FC = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } }
             }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-6"
           >
             Transform your space into a masterpiece in five simple steps. We guide you through every phase of the design process.
           </motion.p>
@@ -92,20 +92,26 @@ const DesignSteps: React.FC = () => {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary/0 via-brand-primary/20 to-brand-primary/0"
+            transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+            className="hidden lg:block absolute top-1/2 left-0 w-full"
             style={{ transformOrigin: "left" }}
-          />
+          >
+            {/* Main Line */}
+            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-brand-primary/0 via-brand-primary/30 to-brand-primary/0" />
+            
+            {/* Glow Effect */}
+            <div className="absolute -top-1 left-0 w-full h-2 bg-gradient-to-r from-brand-primary/0 via-brand-primary/10 to-brand-primary/0 blur-sm" />
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-8 lg:gap-12 p-2 md:p-4 relative">
             {steps.map((step, index) => (
               <motion.div
                 key={step.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative group"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group max-w-sm mx-auto w-full md:max-w-none"
               >
                 {/* Step Number */}
                 <motion.div 
@@ -113,50 +119,69 @@ const DesignSteps: React.FC = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", stiffness: 200, delay: index * 0.2 + 0.3 }}
-                  className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-brand-primary text-white flex items-center justify-center text-sm font-semibold z-20"
+                  className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-brand-primary text-white flex items-center justify-center text-base font-semibold z-20 shadow-lg border-2 border-white group-hover:scale-110 transition-transform duration-300"
                 >
                   {step.number}
                 </motion.div>
 
                 {/* Card */}
-                <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 group-hover:-translate-y-1">
-                  {/* Icon */}
-                  <div className="w-12 h-12 text-brand-primary mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                    {step.icon}
+                <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 relative z-10 group-hover:-translate-y-2 border border-gray-100/50 backdrop-blur-sm">
+                  {/* Icon Container with Floating Effect */}
+                  <div className="relative mb-5 sm:mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-brand-primary/5 rounded-lg transform -rotate-6 transition-all duration-300 group-hover:rotate-0 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-white/50 rounded-lg blur-sm" />
+                    <div className="relative bg-white rounded-lg p-3 sm:p-4 border border-gray-100 shadow-sm">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 text-brand-primary transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                        {step.icon}
+                      </div>
+                    </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 group-hover:text-brand-primary transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
                     {step.description}
                   </p>
 
                   {/* Decorative Elements */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-brand-primary/5 rounded-bl-full transform transition-transform duration-300 group-hover:scale-110" />
-                  <div className="absolute bottom-0 left-0 w-8 h-8 bg-brand-primary/5 rounded-tr-full transform transition-transform duration-300 group-hover:scale-110" />
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-primary/10 to-transparent rounded-bl-[3rem] transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3" />
+                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-brand-primary/10 to-transparent rounded-tr-[2rem] transform transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3" />
+                  
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 transform -skew-x-12 translate-x-full group-hover:translate-x-[-200%]" />
+                  
+                  {/* Bottom Accent */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-brand-primary/50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300" />
                 </div>
 
-                {/* Connection Dots */}
+                {/* Mobile Connection Line */}
+                {index < steps.length - 1 && (
+                  <div className="lg:hidden absolute left-1/2 -bottom-8 transform -translate-x-1/2 h-8 w-px bg-gradient-to-b from-brand-primary/30 to-transparent" />
+                )}
+
+                {/* Desktop Connection Dots */}
                 {index < steps.length - 1 && (
                   <div className="hidden lg:flex absolute top-1/2 -right-6 transform -translate-y-1/2 space-x-1">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 0.6 }}
+                      transition={{ delay: index * 0.1 + 0.4 }}
                       className="w-1.5 h-1.5 rounded-full bg-brand-primary/40"
                     />
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 0.7 }}
+                      transition={{ delay: index * 0.1 + 0.5 }}
                       className="w-1.5 h-1.5 rounded-full bg-brand-primary/60"
                     />
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.2 + 0.8 }}
+                      transition={{ delay: index * 0.1 + 0.6 }}
                       className="w-1.5 h-1.5 rounded-full bg-brand-primary/40"
                     />
                   </div>
@@ -172,7 +197,7 @@ const DesignSteps: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 1.2 }}
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
         >
           <button
             onClick={() => window.location.href = '/contact'}
