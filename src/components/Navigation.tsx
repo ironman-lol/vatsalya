@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import MosaicLogo from './MosaicLogo';
+import logo from '../assets/logo.png';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +33,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <MosaicLogo className="h-12 w-12" />
+            <img src={logo} alt="Vatsalya Logo" className="h-12 w-12" />
             <span className="font-display text-xl tracking-wide">VATSALYA</span>
           </Link>
 
