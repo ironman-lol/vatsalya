@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import MosaicLogo from './MosaicLogo';
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo and description */}
           <div className="md:col-span-2">
             <Link to="/" className="inline-block" aria-label="Vatsalya - Home">
-              <MosaicLogo className="w-32 text-white" />
+              <img src={logo} alt="Vatsalya Logo" className="h-12 w-12" />
             </Link>
             <p className="font-body text-brand-stone-300 mt-6 max-w-md">
               Crafting timeless spaces that blend luxury with functionality. 
