@@ -5,7 +5,7 @@ interface WhatsAppButtonProps {
   message?: string;     // Optional pre-filled message
 }
 
-const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber="+919632076549", message = "Hi! I'm interested in getting my home designed." }) => {
+const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber, message = "Hi! I'm interested in getting my home designed." }) => {
   const handleClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

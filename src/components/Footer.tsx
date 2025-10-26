@@ -49,12 +49,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                  +91 987 654 3210
+                <a href="tel:+919632076549" className="hover:text-white transition-colors">
+                  +91 96320 76549
                 </a>
               </li>
               <li>
-                Bengaluru, India
+                D-no-5-119B12
+              </li>
+              <li>
+                Bhagavathi Layout
+              </li>
+              <li>
+                Puttur-Udupi-576105
               </li>
             </ul>
           </div>

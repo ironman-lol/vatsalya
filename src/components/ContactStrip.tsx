@@ -35,10 +35,10 @@ export default function ContactStrip({ dark = false, className = '' }: ContactSt
             </a>
             <span className="hidden sm:inline opacity-50">|</span>
             <a
-              href="tel:+919876543210"
+              href="tel:+919632076549"
               className="text-lg hover:opacity-80 transition-opacity"
             >
-              +91 98765 43210
+              +91 96320 76549
             </a>
           </div>
 
