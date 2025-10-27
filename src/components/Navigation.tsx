@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
+import logo1 from '../assets/logo1.png';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,8 @@ export default function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <img src={logo} alt="Vatsalya Logo" className="h-12 w-12" />
-            <span className="font-display text-xl tracking-wide">VATSALYA</span>
+            <img src={logo1} alt="Vatsalya Logo" className="h-12 w-48" />
+            {/* <span className="font-display text-xl tracking-wide">VATSALYA</span> */}
           </Link>
 
           {/* Desktop Menu */}
