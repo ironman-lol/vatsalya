@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.png';
-import logo1 from '../assets/logo1.png';
+// import logo from '../assets/logo.png';
+import logo2 from '../assets/logo2.png';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +34,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Vatsalya Logo" className="h-12 w-12" />
-            <img src={logo1} alt="Vatsalya Logo" className="h-12 w-48" />
+            {/* <img src={logo} alt="Vatsalya Logo" className="h-12 w-12" /> */}
+            <img src={logo2} alt="Vatsalya Logo" className="h-12" />
             {/* <span className="font-display text-xl tracking-wide">VATSALYA</span> */}
           </Link>
 
