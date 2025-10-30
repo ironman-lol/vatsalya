@@ -15,10 +15,9 @@ export default function Portfolio() {
 
   const categories = [
     { id: 'all', label: 'All Projects' },
-    { id: 'residential', label: 'Residential' },
-    { id: 'commercial', label: 'Commercial' },
-    { id: 'renovation', label: 'Renovation' },
-    { id: 'interiors', label: 'Interiors' }
+    { id: 'living-room', label: 'Living Room' },
+    { id: 'modular-kitchen', label: 'Modular Kitchen' },
+    { id: 'bedroom', label: 'Bedroom' }
   ];
 
   return (
