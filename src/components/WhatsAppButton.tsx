@@ -13,7 +13,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber, message = 
   };
 
   return (
-    <div className="fixed right-6 z-50">
+    <div className="fixed top-1/2 right-6 -translate-y-1/2 z-50">
       <button
         onClick={handleClick}
         className="group relative bg-green-500 text-white p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:bg-green-600"
