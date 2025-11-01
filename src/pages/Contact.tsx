@@ -127,7 +127,7 @@ export default function Contact() {
             <div>
               <h2 className="text-xl font-bold mb-4">Contact Info</h2>
               <p className="text-gray-600">
-                Email: info@vatsalya.com<br />
+                Email: vatsalyahomeinteriors@gmail.com<br />
                 Phone: (555) 123-4567
               </p>
             </div>

@@ -44,8 +44,8 @@ export default function Footer() {
             <h3 className="font-heading text-xl mb-6">Contact</h3>
             <ul className="space-y-4 font-body text-brand-stone-300">
               <li>
-                <a href="mailto:info@vatsalya.com" className="hover:text-white transition-colors">
-                  info@vatsalya.com
+                <a href="mailto:vatsalyahomeinteriors@gmail.com" className="hover:text-white transition-colors">
+                  vatsalyahomeinteriors@gmail.com
                 </a>
               </li>
               <li>
